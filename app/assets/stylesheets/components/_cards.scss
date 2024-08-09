@@ -1,11 +1,30 @@
+.card-product a {
+  text-decoration: none;
+  color:#3B5A5E;
+}
+
 .card-product {
   overflow: hidden;
+  width: 100%;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  position:relative;
+}
+
+.fa-trash-can {
+  position:absolute;
+  right:16px;
+  top: 16px;
+}
+
+.fa-square-plus {
+  position:absolute;
+  right:42px;
+  top: 16px;
 }
 
 .card-product img {
@@ -15,7 +34,7 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
