@@ -17,6 +17,12 @@ $headers-font: "Maven Pro", "Helvetica", "sans-serif";
 
 a:link {
   text-decoration: none;
+  color:cadetblue;
+}
+
+a:link :visited {
+  text-decoration: none;
+  color:cadetblue;
 }
 
 ul {

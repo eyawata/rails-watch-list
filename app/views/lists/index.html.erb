@@ -5,16 +5,30 @@
     <% end %>
   </h1>
   <% @lists.each do |list| %>
-    <div class="card-category">
-      <li>
-        <%= link_to list.name, list_path(list) %>
-        <%= link_to new_list_bookmark_path(list) do %>
-          <i class="fa-solid fa-square-plus" style="color: #B197FC;"></i>
+    <li style="list-style-type: none">
+      <div class="card-product">
+        <% if list.photo.attached? %>
+          <%= cl_image_tag list.photo.key, height: 100, width: 100, crop: :fill %>
+        <% else %>
+          <%= image_tag("https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") %>
         <% end %>
-        <%= link_to lists_path, data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?" } do %>
-          <i class="fa-solid fa-trash-can" style="color: #B197FC;"></i>
-        <% end %>
-      </li>
-    <% end %>
-  </div>
+        <div class="card-product-infos">
+          <h2><%= link_to list.name, list_path(list) %></h2>
+          <%= link_to new_list_bookmark_path(list) do %>
+            <i class="fa-solid fa-square-plus" style="color: #B197FC;"></i>
+          <% end %>
+          <%= link_to lists_path, data: { turbo_method: :delete, turbo_confirm: "Delete #{list.name}?" } do %>
+            <i class="fa-solid fa-trash-can" style="color: #B197FC;"></i>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
 </div>
+<%# <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> %>

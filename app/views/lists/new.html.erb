@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Add a New List</h1>
+  <%= link_to "Go back to My Lists", lists_path %>
   <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
